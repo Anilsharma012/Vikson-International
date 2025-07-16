@@ -29,7 +29,8 @@ function expressPlugin(): Plugin {
     apply: "serve", // Only apply during dev
     configureServer(server) {
       // ✅ Only require at runtime (during dev)
-      const createServer = require("./server").default;
+      const { createServer } = require("./server");
+
 
       const app = createServer();
       server.middlewares.use(app);
