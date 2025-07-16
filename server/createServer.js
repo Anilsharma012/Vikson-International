@@ -4,7 +4,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { handleDemo } from "./routes/demo.js";
-// import authRoutes from "./routes/authRoutes.js";
+import authRoutes from "./routes/auth.js";
 import sendMailRoutes from "./routes/sendMail.js"; // ✅ Mail route
 import productRoutes from "./routes/product.js";
 
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 
   // Routes
   app.get("/api/demo", handleDemo);
-  // app.use("/api/auth", authRoutes);
+  app.use("/api/auth", authRoutes);
   app.use("/api/products", productRoutes);
   app.use("/api", sendMailRoutes); // ✅ Handles /api/contact and /api/quote
 
