@@ -8,10 +8,7 @@ import connectDB from "./db.js";
 // ✅ Exported separately for Vite's dev middleware
 export function createServer() {
   const app = express();
-
-  // Your middlewares & routes will go here
   app.use(express.json());
-
   return app;
 }
 
@@ -26,18 +23,20 @@ if (process.env.NODE_ENV !== "production") {
 
 const PORT = process.env.PORT || 4000;
 
-async function startServer() {
-  try {
-    await connectDB(); // ✅ Connect MongoDB
-
-    const app = createServer(); // ✅ Call exported function
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}`);
-    });
-  } catch (err: any) {
-    console.error("❌ Error starting server:", err.message);
-    process.exit(1);
+// ✅ Only run server if not disabled by Vite dev server
+if (process.env.START_EXPRESS !== "false") {
+  async function startServer() {
+    try {
+      await connectDB();
+      const app = createServer();
+      app.listen(PORT, () => {
+        console.log(`🚀 Server running on http://localhost:${PORT}`);
+      });
+    } catch (err: any) {
+      console.error("❌ Error starting server:", err.message);
+      process.exit(1);
+    }
   }
-}
 
-startServer();
+  startServer();
+}

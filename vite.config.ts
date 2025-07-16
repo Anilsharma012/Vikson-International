@@ -2,9 +2,7 @@ import { defineConfig, Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
-// ❌ Don’t import createServer here!
-// import { createServer } from "./server";
-
+// ✅ Final Vite Config
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
@@ -23,17 +21,19 @@ export default defineConfig(({ mode }) => ({
   },
 }));
 
+// ✅ Express Plugin for Vite Dev
 function expressPlugin(): Plugin {
   return {
     name: "express-plugin",
-    apply: "serve", // Only apply during dev
+    apply: "serve", // only in dev
     configureServer(server) {
-      // ✅ Only require at runtime (during dev)
-      const { createServer } = require("./server");
+      // ✅ Prevent index.ts from running local server
+      process.env.START_EXPRESS = "false";
 
-
+      const { createServer } = require("./server"); // 👈 make sure your `createServer` is exported
       const app = createServer();
-      server.middlewares.use(app);
+
+      server.middlewares.use(app); // ✅ inject express middleware
     },
   };
 }
