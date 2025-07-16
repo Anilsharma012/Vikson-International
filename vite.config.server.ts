@@ -1,45 +1,27 @@
 import { defineConfig } from "vite";
 import path from "path";
 
-// Server build configuration
+// ✅ Backend build config for Railway & Local
 export default defineConfig({
   build: {
-    lib: {
-      entry: path.resolve(__dirname, "server/node-build.ts"),
-      name: "server",
-      fileName: "production",
-      formats: ["es"],
-    },
+    ssr: "server/server.js", // ✅ this is your actual backend entry file
     outDir: "dist/server",
-    target: "node22",
-    ssr: true,
+    target: "node18", // use node22 if you're sure, else node18
+    emptyOutDir: true,
     rollupOptions: {
+      input: "server/server.js",
       external: [
-        // Node.js built-ins
-        "fs",
-        "path",
-        "url",
-        "http",
-        "https",
-        "os",
-        "crypto",
-        "stream",
-        "util",
-        "events",
-        "buffer",
-        "querystring",
-        "child_process",
-        // External dependencies that should not be bundled
-        "express",
-        "cors",
+        "fs", "path", "url", "http", "https", "os", "crypto",
+        "stream", "util", "events", "buffer", "querystring", "child_process",
+        "express", "cors", "mongoose", "nodemailer", "dotenv"
       ],
       output: {
         format: "es",
-        entryFileNames: "[name].mjs",
+        entryFileNames: "node-build.mjs" // ✅ this should match `npm start`
       },
     },
-    minify: false, // Keep readable for debugging
-    sourcemap: true,
+    sourcemap: false,
+    minify: false,
   },
   resolve: {
     alias: {
