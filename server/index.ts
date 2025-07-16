@@ -1,10 +1,15 @@
 // ✅ server/index.ts
 
 import dotenv from "dotenv";
+dotenv.config();
 import path from "path";
 import { fileURLToPath } from "url";
 import { createServer } from "./createServer.js";
 import connectDB from "./db.js";
+
+
+
+
 
 // ESM compatibility
 const __filename = fileURLToPath(import.meta.url);
