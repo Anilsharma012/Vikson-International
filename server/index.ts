@@ -1,34 +1,33 @@
-import express from "express";
-import cors from "cors";
-import { handleDemo } from "./routes/demo.js";
-import authRoutes from "./routes/auth.js"; // 👈 ADD THIS
-import productRoutes from "./routes/product.js";
-import connectDB from "./db.js"; // ✅ Added
+// ✅ server/index.ts
 
-import { createServer } from "./createServer";
+import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
+import { createServer } from "./createServer.js";
+import connectDB from "./db.js";
 
-import sendMailRoutes from "./routes/sendMail.js";
+// ESM compatibility
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-connectDB(); // ✅ Actually connect to MongoDB
+// Load environment variables
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
+const PORT = process.env.PORT || 4000;
 
-export function createServer() {
-  const app = express();
+async function startServer() {
+  try {
+    await connectDB(); // ✅ Connect DB only at runtime
+    const app = createServer();
 
-  app.use(cors());
-  app.use(express.json());
-  app.use(express.urlencoded({ extended: true }));
-
-  
-app.use("/api", sendMailRoutes); // ✅ Use the route
-  // Routes
-  app.get("/api/ping", (_req, res) => {
-    res.json({ message: "Hello from Express server v2!" });
-  });
-
-  app.get("/api/demo", handleDemo);
-  app.use("/api/auth", authRoutes); // 👈 ADD THIS
-    app.use("/api/products", productRoutes);
-
-  return app;
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on http://localhost:${PORT}`);
+    });
+  } catch (err: any) {
+    console.error("❌ Error starting server:", err.message);
+    process.exit(1);
+  }
 }
+
+startServer();
+
