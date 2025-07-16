@@ -1,9 +1,10 @@
 import { defineConfig, Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { createServer } from "./server";
 
-// https://vitejs.dev/config/
+// ❌ Don’t import createServer here!
+// import { createServer } from "./server";
+
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
@@ -11,7 +12,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: "dist/spa",
-    chunkSizeWarningLimit: 1000, // ✅ added this line
+    chunkSizeWarningLimit: 1000,
   },
   plugins: [react(), expressPlugin()],
   resolve: {
@@ -25,11 +26,11 @@ export default defineConfig(({ mode }) => ({
 function expressPlugin(): Plugin {
   return {
     name: "express-plugin",
-    apply: "serve", // Only apply during development (serve mode)
+    apply: "serve", // Only apply during dev
     configureServer(server) {
+      // ✅ Only require at runtime (during dev)
+      const { createServer } = require("./server");
       const app = createServer();
-
-      // Add Express app as middleware to Vite dev server
       server.middlewares.use(app);
     },
   };
