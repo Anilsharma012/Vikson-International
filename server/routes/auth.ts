@@ -6,7 +6,7 @@ import User from "../models/User.js";
 const router = express.Router();
 
 // ✅ Admin Login Route
-router.post("/admin-login", async (req, res) => {
+router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
