@@ -176,7 +176,7 @@ export default function Contact() {
                       <div>
                         <h3 className="font-semibold">Email</h3>
                         <p className="text-gray-600">info@viksoninternationalmedisys.com</p>
-                        <p className="text-gray-600">support@viksoninternationalmedisys.in</p>
+                        <p className="text-gray-600">support@viksoninternationalmedisys.com</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">

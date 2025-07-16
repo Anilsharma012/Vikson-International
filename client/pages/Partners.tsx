@@ -234,7 +234,7 @@ export default function Partners() {
               </div>
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="/images/office-new.jpg"
                   alt="Partnership Collaboration"
                   className="rounded-lg shadow-lg"
                 />
