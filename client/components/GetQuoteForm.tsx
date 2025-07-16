@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+const API_URL = import.meta.env.VITE_API_URL;
 import {
   Select,
   SelectContent,
@@ -33,7 +34,7 @@ export const GetQuoteForm = () => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("http://localhost:4000/api/quote", {
+      const res = await fetch(`${API_URL}/api/quote`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
