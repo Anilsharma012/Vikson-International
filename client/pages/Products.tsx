@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -8,21 +9,22 @@ const OurProducts = () => {
   const [filteredCategory, setFilteredCategory] = useState("All");
   const [categories, setCategories] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("/api/products")
-      .then((res) => {
-        const data = res.data || [];
-        setProducts(data);
-        const unique = Array.from(
-          new Set(data.map((p) => p.category).filter(Boolean))
-        );
-        setCategories(["All", ...unique]);
-      })
-      .catch((err) => {
-        console.error("Failed to fetch products:", err);
-      });
-  }, []);
+useEffect(() => {
+  axios
+    .get(`${API_URL}/api/products`)
+    .then((res) => {
+      const data = res.data || [];
+      setProducts(data);
+      const unique = Array.from(
+        new Set(data.map((p) => p.category).filter(Boolean))
+      );
+      setCategories(["All", ...unique]);
+    })
+    .catch((err) => {
+      console.error("❌ Failed to fetch products:", err.message || err);
+    });
+}, []);
+
 
   const filtered =
     filteredCategory === "All"

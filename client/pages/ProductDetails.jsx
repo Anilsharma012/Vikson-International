@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -11,7 +12,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`/api/products/${id}`)
+      .get(`${API_URL}/api/products/${id}`)
       .then((res) => {
         console.log("🟢 Product data:", res.data);
         setProduct(res.data);

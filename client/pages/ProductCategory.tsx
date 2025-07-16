@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
+const API_URL = import.meta.env.VITE_API_URL;
 import {
   Card,
   CardContent,
@@ -22,7 +23,7 @@ export default function ProductCategory() {
 
   useEffect(() => {
     axios
-      .get("/api/products")
+      .get(`${API_URL}/api/products`)
       .then((res) => {
         setAllProducts(res.data || []);
       })

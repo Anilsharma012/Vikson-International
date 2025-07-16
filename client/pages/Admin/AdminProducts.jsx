@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL;
 import axios from "axios";
 
 const AdminProducts = () => {
@@ -27,7 +28,7 @@ const AdminProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("/api/products");
+      const res = await axios.get(`${API_URL}/api/products`);
       setProducts(res.data);
     } catch (err) {
       console.error("Error fetching products:", err);
@@ -41,7 +42,7 @@ const AdminProducts = () => {
     }
 
     try {
-      await axios.post("/api/products/add", form);
+      await axios.post(`${API_URL}/api/products/add`, form);
       resetForm();
       fetchProducts();
       setMode("list");
@@ -53,7 +54,7 @@ const AdminProducts = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
     try {
-      await axios.delete(`/api/products/${id}`);
+      await axios.delete(`${API_URL}/api/products/${id}`);
       fetchProducts();
     } catch (err) {
       console.error("Delete error:", err);
@@ -75,7 +76,7 @@ const AdminProducts = () => {
   const handleUpdate = async () => {
     if (!editId) return;
     try {
-      await axios.put(`/api/products/${editId}`, form);
+      await axios.put(`${API_URL}/api/products/${editId}`, form);
       alert("Product updated successfully");
       resetForm();
       fetchProducts();
