@@ -39,13 +39,16 @@ const Header = () => {
     className="w-12 h-12 sm:w-20 sm:h-20 object-contain bg-transparent flex-shrink-0"
   />
   <div className="leading-tight whitespace-nowrap overflow-hidden text-ellipsis max-w-[180px] sm:max-w-none">
-    <h2 className="text-[13px] sm:text-xl font-bold text-white">
-      Vikson International Medisys
-    </h2>
-    <p className="text-[11px] sm:text-sm text-blue-300 leading-tight">
-      The Third Party Manufacturing Specialist
-    </p>
-  </div>
+  <h2 className="text-[10px] sm:text-xl font-bold text-white">
+    Vikson International Medisys
+  </h2>
+  <p className="text-[7px] sm:text-sm text-blue-300 leading-tight">
+    The Third Party Manufacturing Specialist
+  </p>
+  <p className="text-[6px] sm:text-sm text-blue-300 leading-tight">
+    WHO - GMP certified compliance unit
+  </p>
+</div>
 </Link>
 
           {/* Desktop Navigation */}

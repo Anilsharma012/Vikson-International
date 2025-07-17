@@ -48,9 +48,9 @@ const ProductDetails = () => {
             <p className="text-gray-600 mb-4 break-words whitespace-pre-wrap">
               {product?.description || "No description available."}
             </p>
-            <p className="text-gray-800 text-lg">
+            {/* <p className="text-gray-800 text-lg">
               <span className="font-bold">Price:</span> ₹{product?.price || "N/A"}
-            </p>
+            </p> */}
             <p className="text-gray-700 text-sm mt-1">
               <span className="font-bold">Category:</span> {product?.category || "N/A"}
             </p>

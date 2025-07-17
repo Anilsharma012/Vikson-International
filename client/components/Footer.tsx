@@ -17,17 +17,20 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-5 gap-8">
           {/* Logo & Tagline */}
-          <div className="md:col-span-1">
-            <h2 className="text-2xl font-bold text-orange-400 mb-2">
-              Vikson International Medisys
-            </h2>
-            <p className="text-sm text-gray-400">
-              Pharmaceutical Excellence Since 2000
-            </p>
-            <p className="mt-2 text-gray-500 text-xs">
-              Trusted name in healthcare, delivering quality across India.
-            </p>
-          </div>
+         <div className="md:col-span-1">
+  <h2 className="text-2xl font-bold text-orange-400 mb-2">
+    Vikson International Medisys
+    <span className="block text-sm font-medium text-gray-300">
+      (A Group Company Of Vikson International)
+    </span>
+  </h2>
+  <p className="text-sm text-gray-400">
+    Pharmaceutical Excellence with upgraded Technology
+  </p>
+  <p className="mt-2 text-gray-500 text-xs">
+    Trusted name in healthcare, delivering quality across India.
+  </p>
+</div>
 
           {/* Company Info */}
           <div>
@@ -103,7 +106,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-5 h-5 text-orange-400" />
-                <span className="text-gray-400">info@viksointernationalnmedisys.com</span>
+                <span className="text-gray-400">info@viksoninternationalmedisys.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-5 h-5 text-orange-400" />
@@ -116,15 +119,15 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61578559288722" className="text-gray-400 hover:text-orange-400 transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+              {/* <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
                 <Linkedin className="w-5 h-5" />
-              </a>
+              </a> */}
               <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>

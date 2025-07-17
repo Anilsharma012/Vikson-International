@@ -186,7 +186,7 @@ export default function Contact() {
                         <p className="text-gray-600">Drug Plant (Tablet/Cap): Uttarakhand & Himachal Pradesh</p>
                         <p className="text-gray-600">Injectable Plant: Himachal Pradesh</p>
                         <p className="text-gray-600">Softgel Plant: Baddi, Himachal Pradesh</p>
-                        <p className="text-gray-600">Neutra Ranges: Sonipat, Haryana</p>
+                        <p className="text-gray-600">Neutra Ranges: Varhi</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">

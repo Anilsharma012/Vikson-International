@@ -149,7 +149,7 @@ export default function About() {
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       className="w-full h-full"
     > 
-      {["Untitleddesign.png", "ah.jpg", "about.jpg", "about1.jpg"].map(
+      {["ah.jpg", "about.jpg", "about1.jpg"].map(
         (img, index) => (
           <SwiperSlide key={index}>
             <div
@@ -179,17 +179,24 @@ export default function About() {
 
       {/* ✔ Bullet Points */}
       <div className="space-y-6 text-lg text-gray-700 text-left">
-        <div className="flex items-start space-x-3">
-          <span className="text-blue-600 mt-1">✔</span>
-          <p>
-            We work as a contract agreement for a year of supply for the complete formulation of any distributor agency, hospital, or trust.
-          </p>
-        </div>
-        <div className="flex items-start space-x-3">
-          <span className="text-blue-600 mt-1">✔</span>
-          <p>We work for Government Hospital Tenders (ESI / Private).</p>
-        </div>
-      </div>
+  <div className="flex items-start space-x-3">
+    <span className="text-blue-600 mt-1">✔</span>
+    <p>
+      We work as a contract agreement for a year of supply for the complete formulation of any distributor agency, hospital, or trust.
+    </p>
+  </div>
+  <div className="flex items-start space-x-3">
+    <span className="text-blue-600 mt-1">✔</span>
+    <p>We work for Government Hospital Tenders (ESI / Private).</p>
+  </div>
+  <div className="flex items-start space-x-3">
+    <span className="text-blue-600 mt-1">✔</span>
+    <p>
+      We can manufacture or develop products as per customer requirements and deliver them on an urgent basis to fulfill the client's emergency needs.
+    </p>
+  </div>
+</div>
+
     </div>
 
     {/* Specialisation Cards */}
@@ -233,14 +240,6 @@ export default function About() {
 
 
 
- {/* Banner Image above Explore Our Company */}
-      {/* <section>
-        <img
-          src="slider/design1.png"
-          alt="Vikson Pharma Banner"
-          className="w-full h-auto object-cover"
-        />
-      </section> */}
 
 
 
@@ -304,175 +303,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Company Values */}
-      {/* <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">Our Core Values</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                These fundamental principles guide every decision we make and
-                every product we create
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {companyValues.map((value, index) => (
-                <Card
-                  key={index}
-                  className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                >
-                  <CardHeader>
-                    <value.icon
-                      className={`w-16 h-16 mx-auto mb-4 ${value.color}`}
-                    />
-                    <CardTitle className="text-xl">{value.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600">{value.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Company Timeline */}
-      {/* <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">Our Journey</h2>
-              <p className="text-xl text-gray-600">
-                Key milestones that shaped our growth and success
-              </p>
-            </div>
-            <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200"></div>
-              <div className="space-y-12">
-                {milestones.map((milestone, index) => (
-                  <div
-                    key={index}
-                    className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
-                  >
-                    <div
-                      className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}
-                    >
-                      <Card className="hover:shadow-lg transition-shadow">
-                        <CardHeader>
-                          <div className="flex items-center justify-between">
-                            <Calendar className="w-6 h-6 text-blue-600" />
-                            <span className="text-2xl font-bold text-blue-600">
-                              {milestone.year}
-                            </span>
-                          </div>
-                          <CardTitle className="text-xl">
-                            {milestone.title}
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600">
-                            {milestone.description}
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </div>
-                    <div className="relative z-10">
-                      <div className="w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg"></div>
-                    </div>
-                    <div className="w-1/2"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Leadership Team */}
-      {/* <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">Leadership Team</h2>
-              <p className="text-xl text-gray-600">
-                Experienced leaders driving innovation and excellence
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {leadership.map((leader, index) => (
-                <Card
-                  key={index}
-                  className="text-center hover:shadow-xl transition-all duration-300"
-                >
-                  <CardHeader>
-                    <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-blue-100">
-                      <img
-                        src={leader.image}
-                        alt={leader.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <CardTitle className="text-2xl">{leader.name}</CardTitle>
-                    <CardDescription className="text-lg font-semibold text-blue-600 mb-2">
-                      {leader.position}
-                    </CardDescription>
-                    <div className="flex justify-center space-x-4 text-sm text-gray-500 mb-4">
-                      <div className="flex items-center">
-                        <Briefcase className="w-4 h-4 mr-1" />
-                        {leader.experience}
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 mb-4">{leader.description}</p>
-                    <div className="text-sm font-medium text-blue-600">
-                      Specialty: {leader.specialty}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Our Clients Section */}
-      {/* <section className="py-20 bg-gray-50">
-  <div className="container mx-auto px-4">
-    <div className="text-center mb-12">
-      <h2 className="text-4xl font-bold text-gray-800 mb-2">Our Clients</h2>
-      <div className="mx-auto w-24 border-b-2 border-orange-500 mt-2"></div>
-    </div>
-
-  
-    <div className="overflow-x-auto scrollbar-hide">
-      <div className="flex space-x-6 w-max px-2">
-        {[
-          "client1.jpeg",
-          "client7.jpeg",
-          "client3.jpeg",
-          "client4.jpeg",
-          "client 5.jpeg",
-          "client 6.jpeg",
-          "client2.jpeg",
-          "client9.jpeg",
-        ].map((logo, index) => (
-          <div
-            key={index}
-            className="bg-white p-4 rounded shadow-md flex items-center justify-center w-44 h-24 flex-shrink-0"
-          >
-            <img
-              src={`/public/images/${logo}`}
-              alt={`Client ${index + 1}`}
-              className="max-h-full max-w-full object-contain"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section> */}
 
       {/* Why Choose Us */}
       <section className="py-20">
@@ -491,7 +321,7 @@ export default function About() {
                         Proven Track Record
                       </h3>
                       <p className="text-gray-600">
-                        Over 10 years of consistent quality and reliability in
+                        Over 10+ years of consistent quality and reliability in
                         pharmaceutical manufacturing.
                       </p>
                     </div>
@@ -585,7 +415,7 @@ export default function About() {
       </div>
       <div className="rounded-lg overflow-hidden shadow-md">
         <img
-          src="/images/market.webp"
+          src="/images/m.jpg"
           alt="Foregen Team Bag"
           className="w-full h-full object-cover"
         />

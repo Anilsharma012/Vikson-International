@@ -59,18 +59,16 @@ export default function Partners() {
 
   const majorPartners = [
     {
-      name: "Domestic MKT",
-      type: "Manufacturing Partner",
-      // since: "2018",
+      name: "Domestic Market",
+      
       description:
         "Leading pharmaceutical manufacturing company specializing in generic medicines",
       specialization: "Oral Solids & Injectables",
       region: "Pan India",
     },
     {
-      name: "InternationalMarket",
-      type: "Strategic Partner",
-      // since: "2020",
+      name: "International Market",
+    
       description:
         "Global pharmaceutical company with focus on complex generics",
       specialization: "API Development",
@@ -78,8 +76,6 @@ export default function Partners() {
     },
     {
       name: "Hospital  ",
-      type: "Distribution Partner",
-      // since: "2019",
       description:
         "Healthcare distribution and pharmaceutical services provider",
       specialization: "Supply Chain",
@@ -132,7 +128,7 @@ export default function Partners() {
                 Partnership Excellence
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Over two decades of building meaningful partnerships that drive
+                Over One decades of building meaningful partnerships that drive
                 innovation, quality, and growth in the pharmaceutical industry.
               </p>
             </div>
@@ -178,7 +174,7 @@ export default function Partners() {
                 <Card key={index} className="hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <div className="flex items-center justify-between mb-2">
-                      <Badge variant="outline">{partner.type}</Badge>
+                      {/* <Badge variant="outline">{partner.type}</Badge> */}
                       <span className="text-sm text-gray-500">
                         {/* Since {partner.since} */}
                       </span>
@@ -189,7 +185,7 @@ export default function Partners() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="space-y-2">
+                    {/* <div className="space-y-2">
                       <div className="flex justify-between">
                         <span className="font-medium">Specialization:</span>
                         <span className="text-gray-600">
@@ -200,7 +196,7 @@ export default function Partners() {
                         <span className="font-medium">Region:</span>
                         <span className="text-gray-600">{partner.region}</span>
                       </div>
-                    </div>
+                    </div> */}
                   </CardContent>
                 </Card>
               ))}
@@ -276,7 +272,7 @@ export default function Partners() {
                 <p className="text-blue-100 text-lg">Countries Reached</p>
               </div>
               <div>
-                <div className="text-4xl font-bold mb-2">20+</div>
+                <div className="text-4xl font-bold mb-2">10+</div>
                 <p className="text-blue-100 text-lg">Years of Partnerships</p>
               </div>
               <div>

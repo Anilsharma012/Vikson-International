@@ -123,7 +123,7 @@ const nutra = [
     category: "Nutraceuticals",
   },
   {
-    name: "Injections",
+    name: "Injections/Prefield",
     image: "/products/products/Injections.webp",
     pdf: "/products/pdfs/injection.pdf",
     description: "Herbal and protein-rich capsules.",
@@ -249,7 +249,7 @@ const cosmetic = [
   },
   {
     name: "Shampoo",
-    image: "/products/products/Shampoo.webp",
+    image: "/products/products/shampoo11.jpg",
     pdf: "/products/pdfs/shampoo.pdf",
     description: "Nourishing cream for facial skin care.",
     category: "Cosmetic",
@@ -292,11 +292,60 @@ const cosmetic = [
 ];
 
 const categories = {
-  Pharmaceuticals: pharma,
-  Nutraceuticals: nutra,
+  "ProductApprovals/Segments": pharma,
+  "Pharmaceuticals/Nutraceuticals": nutra,
   "Ayurvedic/Herbal": ayur,
   Cosmetic: cosmetic,
 };
+
+
+const masterProducts = [
+  {
+    name: "Product 1",
+    image: "/images/capsule.jpeg",
+  },
+  {
+    name: "Product 2",
+    image: "/images/capsule.jpeg",
+  },
+  {
+    name: "Product 3",
+    image: "/images/capsule.jpeg",
+  },
+    {
+    name: "Product 4",
+    image: "/images/capsule.jpeg",
+  },
+    {
+    name: "Product 5",
+    image: "/images/capsule.jpeg",
+  },
+    {
+    name: "Product 6",
+    image: "/images/capsule.jpeg",
+  },
+    {
+    name: "Product 7",
+    image: "/images/capsule.jpeg",
+  },  {
+    name: "Product 8",
+    image: "/images/capsule.jpeg",
+  },
+    {
+    name: "Product 9",
+    image: "/images/capsule.jpeg",
+  },
+    {
+    name: "Product 10",
+    image: "/images/capsule.jpeg",
+  },
+    {
+    name: "Product 11",
+    image: "/images/capsule.jpeg",
+  }
+];
+
+
 
 export default function Index() {
   const [selectedCategory, setSelectedCategory] = useState("Pharmaceuticals");
@@ -321,7 +370,7 @@ export default function Index() {
       }}
       className="w-full h-full"
     >
-      {["slider8.webp", "uui.png", "manufacturing-plant.webp", "home.jpeg"].map(
+      {["slider8.webp", "u.jpg", "manufacturing-plant.webp", "home.jpeg"].map(
         (img, index) => (
           <SwiperSlide key={index}>
             <div
@@ -346,7 +395,7 @@ export default function Index() {
 
 
       {/* 🔷 Master Product Slider Section */}
-      <section className="py-10 bg-white">
+      {/* <section className="py-10 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-blue-800 mb-6 text-center">
             Master Product
@@ -381,7 +430,45 @@ export default function Index() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+
+
+
+<section className="py-10 bg-white">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-blue-800 mb-6 text-center">
+      Master Product
+    </h2>
+
+    <div className="overflow-hidden">
+      <div className="flex w-max animate-scroll-infinite space-x-4">
+        {masterProducts.map((item, index) => (
+          <div
+            key={index}
+            className="min-w-[140px] sm:min-w-[160px] md:min-w-[180px] max-w-[140px] sm:max-w-[160px] md:max-w-[180px] flex-shrink-0 border rounded-md shadow-sm p-2 sm:p-3 bg-white hover:shadow-md transition"
+          >
+            <img
+              src={item.image}
+              alt={item.name}
+              className="w-full h-20 sm:h-24 md:h-28 object-cover mb-2 rounded"
+            />
+            <h3 className="text-xs sm:text-sm font-semibold text-blue-700 text-center">
+              {item.name}
+            </h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
 
       {/* Quick Highlights */}
       <section className="py-20 bg-gray-50">
@@ -467,14 +554,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Banner Image above Explore Our Company */}
-      {/* <section>
-        <img
-          src="/images/home.jpeg"
-          alt="Vikson Pharma Banner"
-          className="w-full h-auto object-cover"
-        />
-      </section> */}
 
       {/* Why Choose Vikson Section */}
       <section className="py-20 bg-blue-50">
@@ -550,12 +629,12 @@ export default function Index() {
                     <h4 className="text-base font-semibold text-blue-700 text-center mb-2">
                       {item.name}
                     </h4>
-                    <button
+                    {/* <button
                       onClick={() => setSelectedProduct(item)}
                       className="w-full text-sm text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded"
                     >
                       View Details
-                    </button>
+                    </button> */}
                   </div>
                 ))}
               </div>
@@ -608,12 +687,17 @@ export default function Index() {
         </div>
       </section>
 
+
+
+
+
+
       {/* Our Core Divisions */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center mb-12">
             <h2 className="text-4xl font-bold text-blue-800 mb-4">
-              Our Core Divisions
+              Upgraded Lounch/Range
             </h2>
             <p className="text-gray-600 text-lg">
               We operate across a wide spectrum of pharmaceutical categories
@@ -650,7 +734,72 @@ export default function Index() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+<section className="py-20 bg-white">
+  <div className="container mx-auto px-4">
+    <div className="max-w-6xl mx-auto text-center mb-12">
+      <h2 className="text-4xl font-bold text-blue-800 mb-4">
+        Upgraded Launch/Range
+      </h2>
+      <p className="text-gray-600 text-lg">
+        We operate across a wide spectrum of pharmaceutical categories
+      </p>
+    </div>
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="p-6 border rounded-lg shadow-sm hover:shadow-md transition">
+        <h3 className="text-xl font-semibold mb-2 text-blue-600">
+          Anti Cancer Oncology
+        </h3>
+        <p className="text-gray-700 mb-2">Tablets, Injection</p>
+        <p className="text-gray-600 text-sm">
+          Specialized anti-cancer formulations including Paclitaxel,
+          Capecitabine and other cytotoxic & targeted therapies.
+        </p>
+      </div>
+
+      <div className="p-6 border rounded-lg shadow-sm hover:shadow-md transition">
+        <h3 className="text-xl font-semibold mb-2 text-blue-600">
+          Prefilled Injection
+        </h3>
+        <p className="text-gray-700 mb-2">Sterile Ready-to-use</p>
+        <p className="text-gray-600 text-sm">
+          Advanced prefilled syringe solutions ensuring accuracy, safety, and
+          ease of administration.
+        </p>
+      </div>
+
+      <div className="p-6 border rounded-lg shadow-sm hover:shadow-md transition">
+        <h3 className="text-xl font-semibold mb-2 text-blue-600">
+          Effervescent Tablets
+        </h3>
+        <p className="text-gray-700 mb-2">Soluble Formulations</p>
+        <p className="text-gray-600 text-sm">
+          Quick-dissolving tablets ideal for faster absorption and patient
+          compliance in vitamins & supplements.
+        </p>
+      </div>
+
+      <div className="p-6 border rounded-lg shadow-sm hover:shadow-md transition">
+        <h3 className="text-xl font-semibold mb-2 text-blue-600">
+          DCGI Approved Products
+        </h3>
+        <p className="text-gray-700 mb-2">Certified Formulations</p>
+        <p className="text-gray-600 text-sm">
+          Products approved by Drug Controller General of India ensuring
+          top-notch quality, safety, and efficacy.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
 
       {/* Client Testimonials */}
       <section className="py-20 bg-gray-50">

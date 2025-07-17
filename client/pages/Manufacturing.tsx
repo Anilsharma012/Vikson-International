@@ -7,6 +7,7 @@ import {
   CheckCircle,
   Beaker,
   Settings,
+   PackageCheck, FlaskConical 
 } from "lucide-react";
 import {
   Card,
@@ -45,7 +46,18 @@ export default function Manufacturing() {
       icon: Users,
       title: "Expert Team",
       description: "Skilled professionals and technicians",
-    },
+    }
+    ,
+  {
+    icon: FlaskConical,
+    title: "Research & Development (R&D)",
+    description: "Continuous innovation and product enhancement",
+  },
+  {
+    icon: PackageCheck,
+    title: "In-house Packaging",
+    description: "Secure, hygienic, and custom product packaging",
+  },
   ];
 
   const processes = [
