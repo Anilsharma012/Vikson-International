@@ -109,13 +109,14 @@ const OurProducts = () => {
                   key={item._id}
                   className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
                 >
-                  {item.image && (
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-48 object-cover"
-                    />
-                  )}
+                 {item.image && (
+  <img
+    src={item.image}
+    alt={item.name}
+    loading="lazy"
+    className="w-full h-48 object-cover"
+  />
+)}
                   <div className="p-4">
                     <h3 className="text-base font-semibold text-gray-800 mb-1">
                       {item.name}

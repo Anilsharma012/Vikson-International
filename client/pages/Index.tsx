@@ -12,6 +12,17 @@ import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+import {useEffect } from "react";
+const API_URL = import.meta.env.VITE_API_URL;
+
+
+
+
+
+
+
+
+
 <ChevronLeft size={20} />
 
 
@@ -351,10 +362,19 @@ const masterProducts = [
 
 
 export default function Index() {
+  const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Pharmaceuticals");
 
   const [showAll, setShowAll] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+
+
+    useEffect(() => {
+    fetch(`${API_URL}/api/products`)
+      .then((res) => res.json())
+      .then((data) => setProducts(data || []))
+      .catch((err) => console.error("❌ Failed to fetch products:", err));
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -438,7 +458,7 @@ export default function Index() {
 
 
 
-<section className="py-10 bg-white">
+{/* <section className="py-10 bg-white">
   <div className="container mx-auto px-4">
     <h2 className="text-3xl font-bold text-blue-800 mb-6 text-center">
       Master Product
@@ -464,7 +484,45 @@ export default function Index() {
       </div>
     </div>
   </div>
+</section> */}
+
+
+
+{/* 🔷 Master Product Scrollable Section (Manual Scroll) */}
+<section className="py-10 bg-white">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-blue-800 mb-6 text-center">
+      Master Product
+    </h2>
+
+    {products.length === 0 ? (
+      <p className="text-center text-gray-500">Loading master products...</p>
+    ) : (
+      <div className="relative overflow-hidden">
+        <div className="flex w-max animate-scroll-infinite space-x-4">
+          {[...products.slice(0, 10), ...products.slice(0, 10)].map((item, index) => (
+            <div
+              key={index}
+              className="min-w-[140px] sm:min-w-[160px] md:min-w-[180px] flex-shrink-0 border rounded-md shadow-sm p-2 sm:p-3 bg-white hover:shadow-md transition"
+            >
+              <img
+                src={item.image}
+                alt={item.name}
+                  loading="lazy"
+                className="w-full h-24 sm:h-28 object-cover mb-2 rounded"
+              />
+              <h3 className="text-xs sm:text-sm font-semibold text-blue-700 text-center">
+                {item.name}
+              </h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
 </section>
+
+
 
 
 
