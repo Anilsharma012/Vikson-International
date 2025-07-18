@@ -122,13 +122,13 @@ const Footer = () => {
               <a href="https://www.facebook.com/profile.php?id=61578559288722" className="text-gray-400 hover:text-orange-400 transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+              {/* <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
                 <Twitter className="w-5 h-5" />
-              </a>
+              </a> */}
               {/* <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a> */}
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+              <a href="https://www.instagram.com/viks.onmedisys?igsh=cHExNXU2dGo3YmRi" className="text-gray-400 hover:text-orange-400 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
