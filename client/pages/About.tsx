@@ -149,7 +149,7 @@ export default function About() {
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       className="w-full h-full"
     > 
-      {["ah.jpg", "about.jpg", "about1.jpg"].map(
+      {["unw.png", "about.jpg", "about1.jpg"].map(
         (img, index) => (
           <SwiperSlide key={index}>
             <div
