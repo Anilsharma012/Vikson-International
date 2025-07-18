@@ -200,7 +200,7 @@ export default function Contact() {
                   </CardContent>
                 </Card>
 
-               <Card>
+               {/* <Card>
   <CardHeader>
     <CardTitle className="text-xl">Find Us</CardTitle>
   </CardHeader>
@@ -218,7 +218,7 @@ export default function Contact() {
       ></iframe>
     </div>
   </CardContent>
-</Card>
+</Card> */}
 
               </div>
             </div>
