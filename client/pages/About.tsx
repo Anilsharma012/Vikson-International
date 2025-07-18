@@ -255,7 +255,7 @@ export default function About() {
                 </h2>
                 <div className="space-y-6 text-lg text-gray-600">
                   <p>
-                    Founded in 2000, Vikson International Medisys began as a
+                 Vikson International Medisys began as a
                     vision to democratize access to high-quality pharmaceutical
                     products. What started as a small manufacturing unit in
                     Uttrakhand has grown into a multi-state operation serving

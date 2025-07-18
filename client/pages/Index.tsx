@@ -10,6 +10,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+<ChevronLeft size={20} />
 
 
 
@@ -292,7 +295,7 @@ const cosmetic = [
 ];
 
 const categories = {
-  "ProductApprovals/Segments": pharma,
+  "Product Approvals/Segments": pharma,
   "Pharmaceuticals/Nutraceuticals": nutra,
   "Ayurvedic/Herbal": ayur,
   Cosmetic: cosmetic,
@@ -600,94 +603,120 @@ export default function Index() {
       </section>
 
       
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-blue-800 mb-12 text-center">
-            Explore Products by Category
-          </h2>
+  
 
-          {/* 🔹 Loop Through Each Category Block */}
-          {Object.keys(categories).map((cat, i) => (
-            <div key={i} className="mb-16">
-              {/* 🔸 Category Heading */}
-              <h3 className="text-3xl font-semibold text-blue-700 mb-6">
-                {cat}
-              </h3>
+  <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-blue-800 mb-12 text-center">
+          Explore Products by Category
+        </h2>
 
-              {/* 🔸 Product Scroll Area */}
-              <div className="category-scroll ">
-                {categories[cat].map((item, index) => (
-                  <div
-                    key={index}
-                    className="min-w-[260px] max-w-[260px] border rounded-xl shadow-md p-4 bg-white hover:shadow-lg transition"
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-44 object-cover mb-3 rounded"
-                    />
-                    <h4 className="text-base font-semibold text-blue-700 text-center mb-2">
-                      {item.name}
-                    </h4>
-                    {/* <button
-                      onClick={() => setSelectedProduct(item)}
-                      className="w-full text-sm text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded"
-                    >
-                      View Details
-                    </button> */}
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+        {/* 🔹 Loop Through Each Category Block */}
+        {Object.keys(categories).map((cat, i) => (
+          <div key={i} className="mb-16 relative">
+            {/* 🔸 Category Heading */}
+            <h3 className="text-3xl font-semibold text-blue-700 mb-6">
+              {cat}
+            </h3>
 
-          {/* 🔹 Product Modal */}
-          {selectedProduct && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm px-4">
-              <div className="bg-white rounded-2xl shadow-lg max-w-3xl w-full p-6 relative animate-fadeIn">
-                <button
-                  onClick={() => setSelectedProduct(null)}
-                  className="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-xl font-bold"
+            {/* 🔸 Scroll Buttons */}
+          {/* Left Scroll Button */}
+<button
+  onClick={() => {
+    const container = document.getElementById(`scroll-container-${i}`);
+    if (container) container.scrollLeft -= 300;
+  }}
+  className="absolute left-0 top-[55%] transform -translate-y-1/2 z-10 bg-white text-blue-700 border border-blue-600 w-10 h-10 rounded-full shadow-md flex items-center justify-center hover:bg-blue-600 hover:text-white transition"
+>
+  &lt;
+</button>
+
+
+            <div
+              id={`scroll-container-${i}`}
+              className="category-scroll mx-10 flex overflow-x-auto gap-4 scroll-smooth pb-2"
+              style={{ scrollbarWidth: "none" }}
+            >
+              {categories[cat].map((item, index) => (
+                <div
+                  key={index}
+                  className="min-w-[260px] max-w-[260px] border rounded-xl shadow-md p-4 bg-white hover:shadow-lg transition"
                 >
-                  ✕
-                </button>
-                <div className="flex flex-col md:flex-row items-start gap-6">
                   <img
-                    src={selectedProduct.image}
-                    alt={selectedProduct.name}
-                    className="w-full md:w-60 h-60 object-cover rounded"
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-44 object-cover mb-3 rounded"
                   />
-                  <div className="flex-1 text-left">
-                    <h2 className="text-2xl font-bold text-blue-800 mb-3">
-                      {selectedProduct.name}
-                    </h2>
-                    <p className="text-gray-700 mb-4">
-                      {selectedProduct.description ||
-                        "No description available."}
-                    </p>
-                    <p className="text-sm text-gray-500 mb-4">
-                      <strong>Category:</strong>{" "}
-                      {selectedProduct.category || "N/A"}
-                    </p>
-                    {selectedProduct.pdf && (
-                      <a
-                        href={selectedProduct.pdf}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block text-sm text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded"
-                      >
-                        View Product PDF
-                      </a>
-                    )}
-                  </div>
+                  <h4 className="text-base font-semibold text-blue-700 text-center mb-2">
+                    {item.name}
+                  </h4>
+                  {/* Optional View Details Button */}
+                  {/* <button
+                    onClick={() => setSelectedProduct(item)}
+                    className="w-full text-sm text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded"
+                  >
+                    View Details
+                  </button> */}
+                </div>
+              ))}
+            </div>
+{/* Right Scroll Button */}
+<button
+  onClick={() => {
+    const container = document.getElementById(`scroll-container-${i}`);
+    if (container) container.scrollLeft += 300;
+  }}
+  className="absolute right-0 top-[55%] transform -translate-y-1/2 z-10 bg-white text-blue-700 border border-blue-600 w-10 h-10 rounded-full shadow-md flex items-center justify-center hover:bg-blue-600 hover:text-white transition"
+>
+  &gt;
+</button>
+          </div>
+        ))}
+
+        {/* 🔹 Product Modal */}
+        {selectedProduct && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm px-4">
+            <div className="bg-white rounded-2xl shadow-lg max-w-3xl w-full p-6 relative animate-fadeIn">
+              <button
+                onClick={() => setSelectedProduct(null)}
+                className="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-xl font-bold"
+              >
+                ✕
+              </button>
+              <div className="flex flex-col md:flex-row items-start gap-6">
+                <img
+                  src={selectedProduct.image}
+                  alt={selectedProduct.name}
+                  className="w-full md:w-60 h-60 object-cover rounded"
+                />
+                <div className="flex-1 text-left">
+                  <h2 className="text-2xl font-bold text-blue-800 mb-3">
+                    {selectedProduct.name}
+                  </h2>
+                  <p className="text-gray-700 mb-4">
+                    {selectedProduct.description || "No description available."}
+                  </p>
+                  <p className="text-sm text-gray-500 mb-4">
+                    <strong>Category:</strong>{" "}
+                    {selectedProduct.category || "N/A"}
+                  </p>
+                  {selectedProduct.pdf && (
+                    <a
+                      href={selectedProduct.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block text-sm text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded"
+                    >
+                      View Product PDF
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
-          )}
-        </div>
-      </section>
-
-
+          </div>
+        )}
+      </div>
+    </section>
 
 
 

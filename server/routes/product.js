@@ -7,6 +7,10 @@ const router = express.Router();
 // 🔹 Add Product
 router.post("/add", async (req, res) => {
   try {
+    // ✅ DEBUG LOG for PDF field
+    console.log("📦 Incoming product PDF length:", req.body.pdf?.length);
+    console.log("📎 PDF prefix:", req.body.pdf?.slice(0, 30));
+
     const product = new Product(req.body);
     await product.save();
     res.json({ message: "Product added", product });

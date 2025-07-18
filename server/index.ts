@@ -8,7 +8,8 @@ import connectDB from "./db.js";
 // ✅ Exported separately for Vite's dev middleware
 export function createServer() {
   const app = express();
-  app.use(express.json());
+  app.use(express.json({ limit: "10mb" }));
+
   return app;
 }
 

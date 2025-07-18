@@ -11,7 +11,7 @@ const AdminProducts = () => {
   const [products, setProducts] = useState([]);
   const [form, setForm] = useState({
     name: "",
-    price: "",
+ 
     description: "",
     image: "",
     category: "",
@@ -36,7 +36,7 @@ const AdminProducts = () => {
   };
 
   const handleAdd = async () => {
-    if (!form.name || !form.price) {
+    if (!form.name ) {
       alert("Name and Price are required");
       return;
     }
@@ -65,7 +65,7 @@ const AdminProducts = () => {
     setEditId(product._id);
     setForm({
       name: product.name,
-      price: product.price,
+  
       description: product.description,
       image: product.image,
       category: product.category,
@@ -87,7 +87,7 @@ const AdminProducts = () => {
   };
 
   const resetForm = () => {
-    setForm({ name: "", price: "", description: "", image: "", category: "" });
+    setForm({ name: "",  description: "", image: "", category: "" });
     setEditId(null);
   };
 
@@ -134,13 +134,7 @@ const AdminProducts = () => {
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
             />
-            <input
-              type="number"
-              placeholder="Price"
-              className="border p-2 rounded"
-              value={form.price}
-              onChange={(e) => setForm({ ...form, price: e.target.value })}
-            />
+           
             <input
               type="text"
               placeholder="Category"
@@ -224,7 +218,7 @@ const AdminProducts = () => {
                 <thead className="bg-gray-100 text-gray-700 text-sm">
                   <tr>
                     <th className="px-6 py-3 text-left">Name</th>
-                    <th className="px-6 py-3 text-left">Price</th>
+                    {/* <th className="px-6 py-3 text-left">Price</th> */}
                     <th className="px-6 py-3 text-left">Category</th>
                     <th className="px-6 py-3 text-left">Actions</th>
                   </tr>
@@ -233,7 +227,7 @@ const AdminProducts = () => {
                   {products.map((product) => (
                     <tr key={product._id}>
                       <td className="px-6 py-4 text-sm">{product.name}</td>
-                      <td className="px-6 py-4 text-sm">₹{product.price}</td>
+                      {/* <td className="px-6 py-4 text-sm">₹{product.price}</td> */}
                       <td className="px-6 py-4 text-sm">{product.category}</td>
                       <td className="px-6 py-4 text-sm space-x-3">
                         <button
