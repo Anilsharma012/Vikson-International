@@ -3,31 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 const API_URL = import.meta.env.VITE_API_URL;
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 export const GetQuoteForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    productCategory: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const productCategories = [
-   "Protein Powder",
-"TABLET",
-"tablets",
-"Injection"
-  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,11 +22,7 @@ export const GetQuoteForm = () => {
       const res = await fetch(`${API_URL}/api/quote`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-  ...formData,
-  product: formData.productCategory, // ✅ Correct key
-}),
-
+        body: JSON.stringify(formData), // ✅ category removed
       });
 
       const result = await res.json();
@@ -52,7 +33,6 @@ export const GetQuoteForm = () => {
           name: "",
           email: "",
           phone: "",
-          productCategory: "",
           message: "",
         });
       } else {
@@ -70,10 +50,6 @@ export const GetQuoteForm = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSelectChange = (value: string) => {
-    setFormData({ ...formData, productCategory: value });
   };
 
   if (isSubmitted) {
@@ -115,22 +91,8 @@ export const GetQuoteForm = () => {
         required
         disabled={isSubmitting}
       />
-      <Select
-        onValueChange={handleSelectChange}
-        required
-        disabled={isSubmitting}
-      >
-        <SelectTrigger>
-          <SelectValue placeholder="Product of Interest" />
-        </SelectTrigger>
-        <SelectContent>
-          {productCategories.map((category) => (
-            <SelectItem key={category} value={category}>
-              {category}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      {/* 🔥 Product Category dropdown removed here */}
+
       <Textarea
         name="message"
         placeholder="Your Message"
@@ -144,4 +106,4 @@ export const GetQuoteForm = () => {
       </Button>
     </form>
   );
-};  
+};
