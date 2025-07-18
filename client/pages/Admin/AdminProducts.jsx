@@ -164,13 +164,13 @@ const AdminProducts = () => {
               />
             </div>
 
-            {form.image && (
+            {/* {form.image && (
               <img
                 src={form.image}
                 alt="Preview"
                 className="w-32 h-32 object-cover rounded border"
               />
-            )}
+            )} */}
           </div>
 
           <textarea
