@@ -61,7 +61,7 @@ const ProductDetails = () => {
               </p>
             </div>
 
-            <p className="text-gray-700 text-sm mt-2">
+            <p className="text-gray-700 text-xl mt-2">
               <span className="font-semibold">Category:</span>{" "}
               {product.category || "N/A"}
             </p>
@@ -70,7 +70,7 @@ const ProductDetails = () => {
             
           </div>
 
-        </div>
+        </div><br></br>
 
         {/* Back Button */}
         <div className="mt-12 flex justify-center">
