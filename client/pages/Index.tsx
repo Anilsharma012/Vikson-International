@@ -673,7 +673,8 @@ export default function Index() {
         {Object.keys(categories).map((cat, i) => (
           <div key={i} className="mb-16 relative">
             {/* 🔸 Category Heading */}
-            <h3 className="text-3xl font-semibold text-blue-700 mb-6">
+           <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-blue-700 mb-6">
+
               {cat}
             </h3>
 
