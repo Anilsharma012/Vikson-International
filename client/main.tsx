@@ -27,7 +27,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Index />} />
+        <Route path="/" element={<NotFound />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/our-products" element={<Products />} />
         <Route path="/our-products/:category" element={<ProductCategory />} />
