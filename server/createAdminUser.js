@@ -17,8 +17,8 @@ const createAdmin = async () => {
 
     // ✅ Create new user
     const user = new User({
-      name: "Admin Ishwar",
-      email: "ishwarsharma970@gmail.com",
+      name: "Admin Vikas",
+      email: "vikson@gmail.com",
       password: hashedPassword,
     });
 
