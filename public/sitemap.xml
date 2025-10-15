@@ -1,36 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <url>
-    <loc>https://viksoninternationalmedisys.com/</loc>
-    <lastmod>2025-09-09</lastmod>
-  </url>
-
-  <url>
-    <loc>https://viksoninternationalmedisys.com/our-products</loc>
-    <lastmod>2025-09-09</lastmod>
-  </url>
-
-  <url>
-    <loc>https://viksoninternationalmedisys.com/about-us</loc>
-    <lastmod>2025-09-09</lastmod>
-  </url>
-
-  
-
-  <url>
-    <loc>https://viksoninternationalmedisys.com/contact-us</loc>
-    <lastmod>2025-09-09</lastmod>
-  </url>
-
-  <url>
-    <loc>https://viksoninternationalmedisys.com/partners</loc>
-    <lastmod>2025-09-09</lastmod>
-  </url>
-
-  <url>
-    <loc>https://viksoninternationalmedisys.com/manufacturing</loc>
-    <lastmod>2025-09-09</lastmod>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
+<url>
+<loc>https://viksoninternationalmedisys.com/</loc>
+<lastmod>2025-10-15T06:59:39+00:00</lastmod>
+</url>
 </urlset>
